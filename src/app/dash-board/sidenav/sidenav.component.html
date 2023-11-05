@@ -1,0 +1,37 @@
+<mat-nav-list>
+  <div class="logo py-4">
+    <img src="../../../assets/images/test.jpg" alt="Company Logo" />
+  </div>
+  <mat-divider></mat-divider>
+  <h2 matSubheader class="mt-2">APPLICATIONS</h2>
+  <span *ngIf="userRoll">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="./app-home" data-toggle="collapse"
+      data-target="#demo">
+      <mat-icon>home</mat-icon> Home
+    </a>
+  </span>
+  <span *ngIf="userRoll">
+    <div id="demo" class="collapse">
+      <ul>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="./app-bill-page">
+          <mat-icon>receipt</mat-icon> Add Invoice
+        </a>
+      </ul>
+    </div>
+  </span>
+  <span *ngIf="!userRoll">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="./app-bill-page">
+      <mat-icon>receipt</mat-icon> Add Invoice
+    </a>
+  </span>
+  <span *ngIf="userRoll">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="./app-setting/app-profile/app-registration">
+      <mat-icon>dashboard</mat-icon> Dashboard
+    </a>
+  </span>
+  <span *ngIf="userRoll">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="./app-add">
+      <mat-icon>dashboard</mat-icon> Master Page
+    </a>
+  </span>
+</mat-nav-list>

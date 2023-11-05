@@ -1,0 +1,170 @@
+.page {
+  color: #42e3ff;
+  padding: 0 1rem;
+  background: #f1f5f9;
+  &__box {
+    min-height: 120px;
+    background: #1e293b;
+    margin: 0 -1rem;
+    font-size: 36px;
+  }
+  &__content {
+    min-height: calc(100vh - 178px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black;
+    font-size: 2rem;
+    &-data {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+div.container {
+  text-align: center;
+  color: black;
+  margin-top: 50px;
+}
+
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  width: 2rem;
+}
+.custom-day:hover,
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.weekend {
+  background-color: #f0ad4e;
+  border-radius: 1rem;
+  color: white;
+}
+.hidden {
+  display: none;
+}
+.classSelected {
+  background-color: yellow !important;
+}
+
+table.my-table {
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+thead.my-table.headers tr th {
+  border: white solid 3px;
+  background-color: darkblue;
+  color: white;
+  height: 25px;
+  text-align: center;
+}
+
+tbody.my-table.body tr td {
+  border: black solid 1px;
+  border-left: none;
+  height: 25px;
+}
+
+tbody.my-table.body tr td.last {
+  border-right: none;
+}
+
+tbody.my-table.body tr.active {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+
+div.pag-space {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+button.pag-button {
+  width: 50px;
+  height: 20px;
+  cursor: pointer;
+}
+
+select.size-page {
+  width: 100px;
+  text-align-last: center;
+  cursor: pointer;
+}
+/* default and hover color */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);;
+  border-radius: 20px;
+}
+
+::ng-deep .mat-form-field-outline-start {
+  border-radius: 28px 0 0 28px !important;
+  min-width: 28px !important;
+}
+
+::ng-deep .mat-form-field-outline-end {
+  border-radius: 0 28px 28px 0 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix{
+  padding: 7px 0 7px 0;
+  border-radius: 20px;
+  // border: 5px solid red;
+}
+::ng-deep .mat-form-field-appearance-outline{
+  padding: 0px 0 0px 0;
+  // border: 5px solid red;
+  border-radius: 70px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
+  // border: 0.5px solid red;
+  background-color: rgb(255, 255, 255) !important;
+  border-radius: 20px;
+  &:hover {
+    border: 1px solid #42e3ff;
+  }
+}
+
+nav a {
+  text-decoration: none;
+}
+ul.li {
+  list-style: none;
+  text-decoration: none;
+}
+
+.useday {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+ul li button {
+  display: inline-block;
+  width: 100px;
+  &:hover {
+    background: #42e3ff !important;
+    border: 1px solid #040505;
+    color: #040505;
+  }
+}
+.usedaylists{
+  border: 2px solid #040505 !important;
+ background-color: #42e3ff !important;
+ border-radius: 20px;
+}
+.usedaytestlist{
+  border: 2px solid #0c0c0c !important;
+  background-color: #f0ad4e !important;
+  color: #ebeef6;
+  border-radius: 20px;
+}

@@ -1,0 +1,33 @@
+<div class="formData">
+  <form [formGroup]="workaddForm" (ngSubmit)="workaddFormClick($event, workaddForm)">
+    <div>
+      <div class="row">
+        <div class="col-xs-3 col-sm-3">
+          <div class="form-group">
+            <label path="worktype" for="worktype" cssClass="required" required="true">Work Mehod</label>
+            <input class="form-control" formControlName="worktype" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-9 col-sm-9"></div>
+      <div class="col-xs-3 col-sm-3">
+        <div class="post-button">
+          <button type="submit" style="left: 100%; margin-top: 20px" class="btn btn-primary submit">
+            Save
+          </button>
+          <button type="click" style="left: 100%; margin-left: 20px; margin-top: 20px" (click)="onReset()"
+            class="btn btn-danger">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div>
+    <ag-grid-angular #agGrid class="ag-theme-balham" [gridOptions]="gridOptions" style="width: 100%; height: 350px"
+      [pagination]="true" [frameworkComponents]="frameworkComponents">
+    </ag-grid-angular>
+  </div>
+</div>

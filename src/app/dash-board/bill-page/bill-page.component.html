@@ -1,0 +1,138 @@
+<div class="container page">
+  <div class="d-flex page__box p-3 mt-2">Add Invoice</div>
+  <div class="formData">
+    <form [formGroup]="billForm" (ngSubmit)="onbillreqClick($event, billForm)">
+      <div style="margin-left: 10px">
+        <div class="row">
+          <div class="col-xs-3 col-sm-3">
+            <div class="form-group">
+              <label
+                path="billno"
+                for="billno"
+                cssClass="required"
+                required="true"
+                >Bill NO</label
+              >
+              <input class="form-control" formControlName="billno" readonly />
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3">
+            <div class="form-group">
+              <div class="form-group">
+                <label path="cusname" for="cusname" cssClass="required"
+                  >Customer Name</label
+                >
+                <input class="form-control" formControlName="cusname" />
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3">
+            <div class="form-group">
+              <div class="form-group">
+                <label path="mobile" for="mobile" cssClass="required"
+                  >Customer Contact</label
+                >
+                <input
+                  class="form-control"
+                  formControlName="mobile"
+                  minlength="10"
+                  maxlength="10"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3">
+            <div class="form-group">
+              <div class="form-group">
+                <label path="address" for="address" cssClass="required"
+                  >Address</label
+                >
+                <input class="form-control" formControlName="address" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 col-sm-3">
+            <div class="form-group">
+              <label path="date" for="date" cssClass="required" required="true"
+                >Date</label
+              >
+              <input class="form-control" type="date" formControlName="date"  />
+              <!-- <mat-form-field appearance="outline">
+                <input [formControl]="date" matInput readonly (click)="picker.open()"
+                  [matDatepicker]="picker" placeholder="Choose a date" [max]="yesterdayDate" />
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker panelClass="datepickerTwo"></mat-datepicker>
+              </mat-form-field> -->
+              <!-- <p-calendar [monthNavigator]="true" [yearNavigator]="true" formControlName="date" yearRange="2000:2030"
+              inputId="navigators" [showIcon]="true" inputId="icon">
+            </p-calendar> -->
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3">
+            <div class="form-group">
+              <label
+                path="veichalmodel"
+                for="series"
+                cssClass="required"
+                required="true"
+                >Vehicle Model</label
+              >
+              <input class="form-control" formControlName="veichalmodel" />
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3">
+            <div class="form-group">
+              <div class="form-group">
+                <label path="regno" for="regno" cssClass="required"
+                  >Reg No</label
+                >
+                <input class="form-control" formControlName="regno" />
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3">
+            <div class="form-group">
+              <div class="form-group">
+                <label path="kms" for="kms" cssClass="required">KMS</label>
+                <input class="form-control" formControlName="kms" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 col-sm-3">
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="left: 72%; margin-top: 20px"
+              (click)="onAddbuttonClick()"
+            >
+              Add Amount
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+          <div class="post-button">
+            <button
+              type="submit"
+              style="left: 100%; margin-top: 20px"
+              class="btn btn-primary submit"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div>
+      <ag-grid-angular #agGrid class="ag-theme-balham" [gridOptions]="gridOptions" [getRowStyle]="getRowStyle"
+        (rowClicked)="rowClicked($event)" style="width: 100%; height: 350px" [pagination]="true"
+        [frameworkComponents]="frameworkComponents">
+      </ag-grid-angular>
+    </div>
+  </div>
+</div>

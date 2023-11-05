@@ -1,0 +1,48 @@
+<div class="formData">
+  <form [formGroup]="expensesForm" (ngSubmit)="expensesFormClick($event, expensesForm)">
+    <div style="margin-left: 10px">
+      <div class="row">
+        <div class="col-xs-3 col-sm-3">
+          <div class="form-group">
+            <label path="employename" for="employename" cssClass="required" required="true">Particular Expenses
+            </label>
+            <input class="form-control" formControlName="expensesname" />
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3">
+          <div class="form-group">
+            <label path="employesalary" for="employesalary" cssClass="required" required="true">Expenses
+              Amount</label>
+            <input class="form-control" formControlName="expensesamount" />
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3">
+          <div class="form-group">
+            <label path="employeslarydate" for="employeslarydate" cssClass="required" required="true">Date</label>
+            <input class="form-control" type="date" formControlName="expensesdate" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-9 col-sm-9"></div>
+      <div class="col-xs-3 col-sm-3">
+        <div class="post-button">
+          <button type="submit" style="left: 100%; margin-top: 20px" class="btn btn-primary submit">
+            Save
+          </button>
+          <button type="click" style="left: 100%; margin-left: 20px; margin-top: 20px" (click)="onReset()"
+            class="btn btn-danger">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div>
+    <ag-grid-angular #agGrid class="ag-theme-balham" [gridOptions]="gridOptions" style="width: 100%; height: 350px"
+      [pagination]="true" [frameworkComponents]="frameworkComponents">
+    </ag-grid-angular>
+  </div>
+</div>

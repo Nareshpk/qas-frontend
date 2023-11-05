@@ -1,0 +1,45 @@
+<div class="formData">
+  <form [formGroup]="downloadExcelForm" (ngSubmit)="downloadExcel($event, downloadExcelForm)">
+    <div style="margin-left: 10px">
+      <div class="row">
+        <div class="col-xs-3 col-sm-3">
+          <div class="form-group">
+            <label path="startdate" for="startdate" cssClass="required" required="true">Start
+              Date</label>
+            <input class="form-control" type="date"  formControlName="startdate" />
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3">
+          <div class="form-group">
+            <label path="enddate" for="enddate" cssClass="required" required="true">End Date</label>
+            <input class="form-control" type="date" formControlName="enddate" />
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3">
+          <div class="post-button">
+            <button type="submit" style="left: 100%; margin-top: 20px" class="btn btn-primary submit">
+              Download Excel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div>
+    <ag-grid-angular #agGrid class="ag-theme-balham" [gridOptions]="gridOptions" style="width: 100%; height: 350px"
+      [pagination]="true" [frameworkComponents]="frameworkComponents">
+    </ag-grid-angular>
+  </div><br /><br /><br />
+
+  <div>
+    <ag-grid-angular #agGrid class="ag-theme-balham" [gridOptions]="gridOptions1" style="width: 100%; height: 350px"
+      [pagination]="true" [frameworkComponents]="frameworkComponents">
+    </ag-grid-angular>
+  </div><br /><br /><br />
+
+  <div>
+    <ag-grid-angular #agGrid class="ag-theme-balham" [gridOptions]="gridOptions2" style="width: 100%; height: 350px"
+      [pagination]="true" [frameworkComponents]="frameworkComponents">
+    </ag-grid-angular>
+  </div>
+</div>

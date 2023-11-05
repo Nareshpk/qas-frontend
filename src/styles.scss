@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.custom-snackbar {
+  text-align: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #43f9ff;
+  color: rgb(255, 255, 255);
+  text-transform: capitalize !important;
+  .mat-simple-snackbar {
+    align-items: center !important;
+    justify-content: center !important;
+    text-transform: capitalize !important;
+    span {
+      text-align: center !important;
+      align-items: center !important;
+      justify-content: center !important;
+      color: rgb(0, 0, 0);
+      text-transform: capitalize !important;
+    }
+  }
+}

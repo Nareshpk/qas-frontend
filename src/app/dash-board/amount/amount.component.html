@@ -1,0 +1,21 @@
+<div class="Header">
+    <h5>Amount</h5>
+</div>
+<div class="Deatails">
+    <h2 style="text-align: center;">Amount Details</h2>
+    <div *ngFor="let item of amountdtails;" style="display: flex;">
+        <div>
+            <ul class="myUL">
+                <li>{{item.workmethod}}:</li>
+            </ul>
+        </div>
+        <div>
+            <ul class="myUL1">
+                <li style="text-align: right;">{{item.amount}}</li>
+            </ul>
+        </div>
+    </div>
+    <div >
+      <button style="float: right;" class="btn btn-primary" (click)="OnClick()">ok</button>
+    </div>
+</div>

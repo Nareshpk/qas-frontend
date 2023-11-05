@@ -1,0 +1,100 @@
+<div>
+  <div class="container">
+
+    <form [formGroup]="dateForm">
+      <div class="row">
+        <div class="col-xs-3 col-sm-3">
+          <div class="form-group">
+            <div class="form-group">
+              <ul class="useday">
+                <li><button type="button" [ngClass]="dayilybutton==true ? 'usedaylists':'usedaytestlist'"
+                    (click)="OnChagnes($event,'Day')">Day</button></li>
+                <br />
+                <li><button type="button" class="usedaylists"
+                    [ngClass]="weeklybutton==true ? 'usedaylists':'usedaytestlist'"
+                    (click)="OnChagnes($event,'Week')">Week</button> </li><br />
+                <li><button type="button" class="usedaylists"
+                    [ngClass]="monthlybutton==true ? 'usedaylists':'usedaytestlist'"
+                    (click)="OnChagnes($event,'Month')">Month</button> </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3" *ngIf="dayilybutton">
+          <div class="form-group">
+            <label path="date" for="date" cssClass="required" required="true">Dayily Date</label>
+            <div class="table-actions w-100">
+              <div class="form-section table_search selection-form">
+                <div class="custom-form-group">
+                  <div class="custom-form-control">
+                    <mat-form-field appearance="outline">
+                      <input [formControl]="selectedDate" matInput readonly (click)="picker.open()"
+                        [matDatepicker]="picker" placeholder="Choose a date" [max]="yesterdayDate" />
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker panelClass="datepickerTwo"></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3" *ngIf="weeklybutton">
+          <div class="form-group">
+            <label path="date" for="date" cssClass="required" required="true">Week Date</label>
+            <div class="table-actions-test">
+              <div class="form-section-test table_search selection-form-test">
+                <div class="custom-form-group-test">
+                  <div class="custom-form-control-test">
+                    <mat-form-field appearance="outline" (change)="WeekdateClick()">
+                      <input readonly matInput [matDatepickerFilter]="sundayFilter"
+                        [matDatepicker]="leave_datepickerFour" [formControl]="previewWeek"
+                        placeholder="Choose a Week date" (click)="leave_datepickerFour.open()"
+                        (dateChange)="valueChanged($event)" />
+                      <mat-datepicker-toggle matSuffix [for]="leave_datepickerFour"></mat-datepicker-toggle>
+                      <mat-datepicker #leave_datepickerFour></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3" *ngIf="monthlybutton">
+          <div class="form-group">
+            <label path="date" for="date" cssClass="required" required="true">Month Date</label>
+            <div class="table-actions-test">
+              <div class="form-section-test table_search selection-form-test">
+                <div class="custom-form-group-test">
+                  <div class="custom-form-control-test">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <input readonly matInput [matDatepickerFilter]="MontFilter" [matDatepicker]="month_datepickerFour"
+                        placeholder="Choose a Month date" [formControl]="previewMonth"
+                        (click)="month_datepickerFour.open()" (dateChange)="MonthvalueChanged($event)" />
+                      <mat-datepicker-toggle matSuffix [for]="month_datepickerFour"></mat-datepicker-toggle>
+                      <mat-datepicker #month_datepickerFour></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3">
+          <div class="form-group"></div>
+          <button type="button" class="btn btn-primary submit" style="margin-right: 40px"
+            (click)="onGeneratePdfReport($event, dateForm)">
+            Download Pdf
+          </button>
+        </div>
+      </div>
+      <div class="row"></div>
+    </form>
+    <div>
+      <ag-grid-angular #agGrid class="ag-theme-balham" [gridOptions]="gridOptions" [getRowStyle]="getRowStyle"
+        (rowClicked)="rowClicked($event)" style="width: 100%; height: 350px" [pagination]="true"
+        [frameworkComponents]="frameworkComponents">
+      </ag-grid-angular>
+    </div>
+  </div>
+</div>

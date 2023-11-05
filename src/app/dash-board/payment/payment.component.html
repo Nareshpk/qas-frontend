@@ -1,0 +1,133 @@
+<div class="Header">
+  <h5>Amount</h5>
+</div>
+
+<div class="formData">
+  <form
+    [formGroup]="purchasereqForm"
+    (ngSubmit)="onOkClick($event, purchasereqForm)"
+  >
+    <div
+      formArrayName="purchasereqFormArry"
+      *ngFor="let row of f?.purchasereqFormArry['controls']; let i = index"
+    >
+      <div [formGroupName]="i">
+        <div class="custome-form">
+          <div class="row">
+            <div class="col-xs-3 col-sm-3">
+              <div class="form-group">
+                <div class="form-group">
+                  <label path="b-group" for="b-group" cssClass="required"
+                    >Work Method</label
+                  >
+
+                  <select
+                    value="--Select Blood Group--"
+                    class="form-control"
+                    path="b-group"
+                    formControlName="workmethod"
+                    name="workmethod"
+                    id="workmethod"
+                  >
+                    <option value="" hidden>--Select method--</option>
+                    <option value="null" disabled selected>
+                      --Select method--
+                    </option>
+                    <option
+                      *ngFor="let system of workmethod001mb"
+                      [value]="system.worktype"
+                    >
+                      {{ system.worktype }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-3 col-sm-3">
+              <div class="form-group">
+                <div class="form-group">
+                  <label path="amount" for="amount" cssClass="required"
+                    >Amount</label
+                  >
+                  <input class="form-control" formControlName="amount"   (change)="onChange($event,i)" />
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+            <div class="col-xs-1 col-sm-1" style="margin-top: 25px">
+              <button
+                type="button"
+                class="btn btn-primary submit"
+                (click)="addItem()"
+              >
+                Add
+              </button>
+            </div>
+            <div class="col-xs-1 col-sm-1" style="margin-top: 25px">
+              <button
+                type="button"
+                class="btn btn-warning reset"
+                (click)="removeItem(i)"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="custome-form">
+      <div class="row">
+        <div class="col-xs-3 col-sm-3">
+          <div class="form-group">
+            <div class="form-group">
+              <label path="amount" for="amount" cssClass="required"
+                >Total Amount</label
+              >
+              <input class="form-control" formControlName="tamount" readonly />
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3" style="margin-left: 100px">
+          <div class="form-group">
+            <div class="form-group">
+              <label path="b-group" for="b-group" cssClass="required"
+                >Payment Method</label
+              >
+
+              <select
+                value="--Select Blood Group--"
+                class="form-control"
+                path="b-group"
+                formControlName="pmethod"
+                name="pmethod"
+                id="pmethod"
+              >
+                <option value="" hidden>--Select method--</option>
+                <option value="null" disabled selected>
+                  --Select method--
+                </option>
+                <option>Cash</option>
+                <option>GPay</option>
+                <option>Phone Pay</option>
+                <option>Paytm</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-9 col-sm-9"></div>
+      <div class="col-xs-1 col-sm-1">
+        <button type="submit" class="btn btn-primary submit">Save</button>
+      </div>
+      <div class="col-xs-1 col-sm-1">
+        <button type="button" class="btn btn-danger reset">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="Header">
+  <hr />
+</div>

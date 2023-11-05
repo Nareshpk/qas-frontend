@@ -1,0 +1,84 @@
+.page {
+  color: #42e3ff;
+  padding: 0 1rem;
+  background: #f1f5f9;
+  &__box {
+    min-height: 120px;
+    background: #1e293b;
+    margin: 0 -1rem;
+    font-size: 36px;
+  }
+  &__content {
+    min-height: calc(100vh - 178px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black;
+    font-size: 2rem;
+    &-data {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+::ng-deep .custom-modalbox .mat-dialog-container {
+  max-width: 80%  !important;
+  width: 60%  !important;
+  height: 1000px  !important;;
+}
+
+// ::ng-deep .custom-modalbox {
+//   .mat-dialog-container {
+//    padding: 10;
+//   }
+// }
+.post-button {
+  float: right;
+  margin-right: 150px;
+  position: relative;
+}
+
+.formData {
+  margin-top: 50px;
+  color: black;
+}
+
+/* default and hover color */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);;
+  border-radius: 20px;
+}
+
+::ng-deep .mat-form-field-outline-start {
+  border-radius: 28px 0 0 28px !important;
+  min-width: 28px !important;
+}
+
+::ng-deep .mat-form-field-outline-end {
+  border-radius: 0 28px 28px 0 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix{
+  padding: 7px 0 7px 0;
+  border-radius: 20px;
+  // border: 5px solid red;
+}
+::ng-deep .mat-form-field-appearance-outline{
+  padding: 0px 0 0px 0;
+  // border: 5px solid red;
+  border-radius: 70px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
+  // border: 0.5px solid red;
+  background-color: rgb(255, 255, 255) !important;
+  border-radius: 20px;
+  &:hover {
+    border: 1px solid #42e3ff;
+  }
+}
+
+

@@ -1,0 +1,13 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header
+      (toggleSidebarForMe)="sideBarToggler()"
+      (loguts)="loguts()"
+    ></app-header>
+    <!-- <app-body></app-body> -->
+    <router-outlet></router-outlet> </mat-drawer-content
+></mat-drawer-container>
+

@@ -1,0 +1,25 @@
+<mat-toolbar>
+  <mat-toolbar-row class="justify-content-between">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="row mr-2 ml-auto">
+      <ul class="row m-0 align-items-center">
+        <li>
+          <button mat-button class="user mt-2 d-flex align-items-center">
+            <h1 style="color:#000000;">{{ username }}</h1>
+            <button mat-menu-item>
+              <mat-icon (click)="submit()">exit_to_app</mat-icon>
+            </button>
+          </button>
+          <mat-menu>
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              Logout
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

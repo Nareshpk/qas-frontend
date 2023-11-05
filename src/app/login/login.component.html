@@ -1,0 +1,49 @@
+<div class="signup">
+  <div class="login-overlay"></div>
+  <div class="master-login">
+    <div class="login-left-content" fxLayout="column">
+      <form class="loginForm form-section" [formGroup]="loginForm" (ngSubmit)="onLogInClick($event, loginForm)">
+        <div class="from-desc">
+          <h4 class="logo-tagline">
+            {{ "Quality auto service" }}
+          </h4>
+
+          <div class="row">
+            <div class="form-group">
+              <label path="billno" for="billno" cssClass="required" class="logo-taglines" required="true">Enter Your
+                Email</label>
+              <input class="form-control" placeholder="Username" id="Username" name="Username"
+                formControlName="username" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group " style="display: flex;justify-content: center;align-items: center ;">
+              <input class="form-control" name="password" type="password" placeholder="Password" id="password"
+                #password1 formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+              <div class="input-icon" (click)="changeType(password1, 1)">
+                <mat-icon style="font-size: 18px;cursor: pointer;" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' :
+                  'visibility'}}</mat-icon>
+              </div>
+            </div>
+          </div>
+          <div class="remember-forgot-box" fxLayout="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row"
+            fxLayout.xs="row" fxLayoutAlign="start start" fxLayoutGap="8px">
+            <div fxLayout="column" fxFlex="50" fxFlexFill fxLayoutAlign="start start">
+            </div>
+
+            <!-- <a  class="logo-Forgot">
+                              Forgot Password?</a> -->
+            <button type="submit" class="login-btn" mat-button>Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="login-footer">
+  <div class="login-overlay"></div>
+  <div class="login-footer-content">
+    <p>&copy; Copyright 2016 | All rights reserved | Quality auto service</p>
+    <img class="logo" src="../../../../assets/images/logo.png" alt="logo" />
+  </div>
+</div>
